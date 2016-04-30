@@ -297,7 +297,7 @@ def run_domain_checks_on_domain(domain, rounded_time, env, dns_domains, dns_zone
 	output = BufferedOutput()
 
 	# we'd move this up, but this returns non-pickleable values
-	ssl_certificates = get_ssl_certificates(env)
+	ssl_certificates = None #get_ssl_certificates(env)
 
 	# The domain is IDNA-encoded in the database, but for display use Unicode.
 	try:
@@ -623,7 +623,7 @@ def check_web_domain(domain, rounded_time, ssl_certificates, env, output):
 	# We need a TLS certificate for PRIMARY_HOSTNAME because that's where the
 	# user will log in with IMAP or webmail. Any other domain we serve a
 	# website for also needs a signed certificate.
-	check_ssl_cert(domain, rounded_time, ssl_certificates, env, output)
+	#check_ssl_cert(domain, rounded_time, ssl_certificates, env, output)
 
 def query_dns(qname, rtype, nxdomain='[Not Set]', at=None):
 	# Make the qname absolute by appending a period. Without this, dns.resolver.query

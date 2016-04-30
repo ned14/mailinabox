@@ -2,6 +2,11 @@
 # This is the entry point for configuring the system.
 #####################################################
 
+# Added by ned so this works in an LXC container
+export DISABLE_FIREWALL=1
+
+
+
 source setup/functions.sh # load our functions
 
 # Check system setup: Are we running as root on Ubuntu 14.04 on a
